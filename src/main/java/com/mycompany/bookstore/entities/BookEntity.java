@@ -37,11 +37,18 @@ public class BookEntity {
     @JoinColumn(name = "promotion_id")
     private PromotionEntity promotion;
 
+    //mapping
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CategoryManagementEntity> categoryManagements;
 
     @OneToMany(mappedBy = "bookSerivce",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ServiceTypeEntity> serviceType;
+
+    @OneToMany(mappedBy = "bookReview",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ReviewEntity> reviews;
+
+    @OneToMany(mappedBy = "bookImage",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BookImageEntity> images;
 
     public BookEntity() {
     }
