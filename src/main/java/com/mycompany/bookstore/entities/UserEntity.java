@@ -7,13 +7,14 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "user")
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne()
+    @OneToOne
     @JoinColumn(name = "role")
     private UserRoleEntity role;
 
@@ -44,6 +45,8 @@ public class UserEntity {
     @OneToMany(mappedBy = "userReview",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ReviewEntity> reviews;
 
+    @OneToMany(mappedBy = "userOrder",cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderEntity> orders;
 
 
     public UserEntity() {

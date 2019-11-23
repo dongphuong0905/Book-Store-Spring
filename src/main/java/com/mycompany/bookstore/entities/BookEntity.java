@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "book")
 public class BookEntity {
 
     @Id
@@ -49,6 +50,10 @@ public class BookEntity {
 
     @OneToMany(mappedBy = "bookImage",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookImageEntity> images;
+
+    @OneToMany(mappedBy = "bookOrderDetail",cascade = CascadeType.ALL, orphanRemoval = true)
+    private  List<OrderDetailEntity> orderDetails;
+
 
     public BookEntity() {
     }

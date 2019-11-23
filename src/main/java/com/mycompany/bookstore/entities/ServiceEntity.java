@@ -3,6 +3,7 @@ package com.mycompany.bookstore.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "service")
 public class ServiceEntity {
 
     public int getId() {

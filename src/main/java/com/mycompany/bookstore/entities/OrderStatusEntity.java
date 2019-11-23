@@ -3,15 +3,14 @@ package com.mycompany.bookstore.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "promotion")
-public class PublisherEntity {
+@Table(name = "order_status")
+public class OrderStatusEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, name = "publisher_name")
-    private String publsherName;
-
+    @Column(nullable = false)
+    private String description;
 
 }

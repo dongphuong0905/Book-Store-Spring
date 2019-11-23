@@ -5,6 +5,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name = "category_management")
 public class CategoryManagementEntity {
 
     @Id
